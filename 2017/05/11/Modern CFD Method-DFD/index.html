@@ -90,13 +90,13 @@
 <meta name="description" content="1.1 简介许多工程问题受控于一系列偏微分方程(PDEs)。例如，牛顿粘性流体由N-S方程进行建模。怎样高效地解PDEs对于工程应用具有重要意义。有两种方法可以获得PDE的解。第一种方法是追求解的解析表达式。这种方法也叫做解析法，并且得到的解称为解析解。解析解在解域的任何地方都是精确的。另一种方法是追求给定PDE的近似解。通常，近似解由在离散点通过数值技术获得的函数值来定义。所以，这种方法也叫作数">
 <meta name="keywords" content="DFD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Domain-Free Discretization (DFD) method">
-<meta property="og:url" content="http://yoursite.com/2017/05/11/Domain-Free Discretization(DFD) method/index.html">
+<meta property="og:title" content="Modern CFD Method-DFD">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/Modern CFD Method-DFD/index.html">
 <meta property="og:site_name" content="妖刀kylin">
 <meta property="og:description" content="1.1 简介许多工程问题受控于一系列偏微分方程(PDEs)。例如，牛顿粘性流体由N-S方程进行建模。怎样高效地解PDEs对于工程应用具有重要意义。有两种方法可以获得PDE的解。第一种方法是追求解的解析表达式。这种方法也叫做解析法，并且得到的解称为解析解。解析解在解域的任何地方都是精确的。另一种方法是追求给定PDE的近似解。通常，近似解由在离散点通过数值技术获得的函数值来定义。所以，这种方法也叫作数">
-<meta property="og:updated_time" content="2017-05-15T02:55:06.876Z">
+<meta property="og:updated_time" content="2017-05-22T13:10:04.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Domain-Free Discretization (DFD) method">
+<meta name="twitter:title" content="Modern CFD Method-DFD">
 <meta name="twitter:description" content="1.1 简介许多工程问题受控于一系列偏微分方程(PDEs)。例如，牛顿粘性流体由N-S方程进行建模。怎样高效地解PDEs对于工程应用具有重要意义。有两种方法可以获得PDE的解。第一种方法是追求解的解析表达式。这种方法也叫做解析法，并且得到的解称为解析解。解析解在解域的任何地方都是精确的。另一种方法是追求给定PDE的近似解。通常，近似解由在离散点通过数值技术获得的函数值来定义。所以，这种方法也叫作数">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/11/Domain-Free Discretization(DFD) method/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/11/Modern CFD Method-DFD/"/>
 
 
 
 
 
-  <title> Domain-Free Discretization (DFD) method | 妖刀kylin </title>
+  <title> Modern CFD Method-DFD | 妖刀kylin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/Domain-Free Discretization(DFD) method/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/Modern CFD Method-DFD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jie">
@@ -271,7 +271,7 @@
             
             
               
-                Domain-Free Discretization (DFD) method
+                Modern CFD Method-DFD
               
             
           </h1>
@@ -322,7 +322,7 @@
       
 
       
-        <h1 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h1><p>许多工程问题受控于一系列偏微分方程(PDEs)。例如，牛顿粘性流体由N-S方程进行建模。怎样高效地解PDEs对于工程应用具有重要意义。有两种方法可以获得PDE的解。第一种方法是追求解的解析表达式。这种方法也叫做解析法，并且得到的解称为解析解。解析解在解域的任何地方都是精确的。另一种方法是追求给定PDE的近似解。通常，近似解由在离散点通过数值技术获得的函数值来定义。所以，这种方法也叫作数值方法，近似解称为数值解。当PDE的解析解很难获得时，常常使用数值方法。尽管解析法和数值法都能给出PDE的解，但它们包含完全不同的求解过程。<br>对于解析法，PDE和它的边界条件分开处理。换句话说，解析解通常通过两步来获得。第一步，我们仅仅考虑PDE，获得通解。再进行第二步，将边界条件带入通解表达式来确定通解中的未知系数。显然，第一步不包含解域。解域（问题的几何形状）仅仅包含在第二步中，当边界条件被执行时。所以，解析法能很好地应用在规则和不规则域问题中。<br>相反，数值法通过直接联合PDE和边界条件来解PDE。换句话说，数值解仅通过一步获得。在这步中，PDE通过边界条件恰当的实施在解域中离散。我们可以清晰地看出PDE通过数值法进行数值离散具有问题依赖性。由于这一特性，一些数值方法只能应用于规则域问题。例如有限差分法和DQ的全局方法(the global method of differential quadrature)，其通过仅使用一些网格点来获得精确的数值结果时更高效。这些方法在PDE中沿着直网格线离散导数。所以，需要计算区域是矩形的或者是矩形子域的结合。当问题需要考虑复杂几何形状时，问题的曲线边界可能不能与直网格线一致。为了应用有限差分法和DQ法，需要做坐标转换，其将不规则物理区域转换成计算空间中的规则域。总之，坐标转换可以通过数值网格生成技术完成。在计算空间中，有限差分法和DQ法可以直接应用，因为在这个空间解域是规则的。为了在计算空间中做数值计算，我们需要将控制偏微分方程组和边界条件转换成计算空间中的相关形式。这个过程非常复杂，并且是问题相关的。此外，它可能在数值计算中带入附加误差。许多年来，研究者期望发展出一种高效的数值方法，其可以避免复杂的坐标转换过程。<br>另一方面，我们注意到</p>
+        <h1 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h1><p>许多工程问题受控于一系列偏微分方程(PDEs)。例如，牛顿粘性流体由N-S方程进行建模。怎样高效地解PDEs对于工程应用具有重要意义。有两种方法可以获得PDE的解。第一种方法是追求解的解析表达式。这种方法也叫做解析法，并且得到的解称为解析解。解析解在解域的任何地方都是精确的。另一种方法是追求给定PDE的近似解。通常，近似解由在离散点通过数值技术获得的函数值来定义。所以，这种方法也叫作数值方法，近似解称为数值解。当PDE的解析解很难获得时，常常使用数值方法。尽管解析法和数值法都能给出PDE的解，但它们包含完全不同的求解过程。<br>对于解析法，PDE和它的边界条件分开处理。换句话说，解析解通常通过两步来获得。第一步，我们仅仅考虑PDE，获得通解。再进行第二步，将边界条件带入通解表达式来确定通解中的未知系数。显然，第一步不包含解域。解域（问题的几何形状）仅仅包含在第二步中，当边界条件被执行时。所以，解析法能很好地应用在规则和不规则域问题中。<br>相反，数值法通过直接联合PDE和边界条件来解PDE。换句话说，数值解仅通过一步获得。在这步中，PDE通过边界条件恰当的实施在解域中离散。我们可以清晰地看出PDE通过数值法进行数值离散具有问题依赖性。由于这一特性，一些数值方法只能应用于规则域问题。例如有限差分法和DQ的全局方法(the global method of differential quadrature)，其通过仅使用一些网格点来获得精确的数值结果时更高效。这些方法在PDE中沿着直网格线离散导数。所以，需要计算区域是矩形的或者是矩形子域的结合。当问题需要考虑复杂几何形状时，问题的曲线边界可能不能与直网格线一致。为了应用有限差分法和DQ法，需要做坐标转换，其将不规则物理区域转换成计算空间中的规则域。总之，坐标转换可以通过数值网格生成技术完成。在计算空间中，有限差分法和DQ法可以直接应用，因为在这个空间解域是规则的。为了在计算空间中做数值计算，我们需要将控制偏微分方程组和边界条件转换成计算空间中的相关形式。这个过程非常复杂，并且是问题相关的。此外，它可能在数值计算中带入附加误差。许多年来，研究者期望发展出一种高效的数值方法，其可以避免复杂的坐标转换过程。<br>另一方面，我们注意到对于不规则区域问题需要坐标转换是因为PDE的数值离散联合了与解域有关的边界条件。</p>
 
       
     </div>
