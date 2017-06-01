@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="首先要创建博客文件使用Markdownpad打开并编辑，保存文章写好后执行下面命令即可发布文章    hexo d -g">
+<meta name="description" content="Next创建标签页cd your-hexo-site hexo new page &amp;quot;tags&amp;quot; 这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：    title: tags    date: 2017-06-01 22:12:02    type: “tags”注意：如果有启用多说或者Disqus评论，默认页面也会带有">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo发布博客">
-<meta property="og:url" content="http://yoursite.com/2017/04/28/Hexo发布博客/index.html">
+<meta property="og:title" content="Hexo杂记">
+<meta property="og:url" content="http://yoursite.com/2017/04/28/Hexo杂记/index.html">
 <meta property="og:site_name" content="妖刀kylin">
-<meta property="og:description" content="首先要创建博客文件使用Markdownpad打开并编辑，保存文章写好后执行下面命令即可发布文章    hexo d -g">
+<meta property="og:description" content="Next创建标签页cd your-hexo-site hexo new page &amp;quot;tags&amp;quot; 这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：    title: tags    date: 2017-06-01 22:12:02    type: “tags”注意：如果有启用多说或者Disqus评论，默认页面也会带有">
 <meta property="og:image" content="http://i.imgur.com/qkPWIKn.png">
-<meta property="og:updated_time" content="2017-05-02T07:02:01.043Z">
+<meta property="og:updated_time" content="2017-06-01T14:37:55.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo发布博客">
-<meta name="twitter:description" content="首先要创建博客文件使用Markdownpad打开并编辑，保存文章写好后执行下面命令即可发布文章    hexo d -g">
+<meta name="twitter:title" content="Hexo杂记">
+<meta name="twitter:description" content="Next创建标签页cd your-hexo-site hexo new page &amp;quot;tags&amp;quot; 这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：    title: tags    date: 2017-06-01 22:12:02    type: “tags”注意：如果有启用多说或者Disqus评论，默认页面也会带有">
 <meta name="twitter:image" content="http://i.imgur.com/qkPWIKn.png">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/28/Hexo发布博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/28/Hexo杂记/"/>
 
 
 
 
 
-  <title> Hexo发布博客 | 妖刀kylin </title>
+  <title> Hexo杂记 | 妖刀kylin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/Hexo发布博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/Hexo杂记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jie">
@@ -273,7 +273,7 @@
             
             
               
-                Hexo发布博客
+                Hexo杂记
               
             
           </h1>
@@ -324,7 +324,10 @@
       
 
       
-        <p>首先要创建博客文件<br><img src="http://i.imgur.com/qkPWIKn.png" alt=""><br>使用Markdownpad打开并编辑，保存<br>文章写好后执行下面命令即可发布文章<br>    hexo d -g</p>
+        <h1 id="Next创建标签页"><a href="#Next创建标签页" class="headerlink" title="Next创建标签页"></a>Next创建标签页</h1><pre><code>cd your-hexo-site
+hexo new page &quot;tags&quot;
+</code></pre><p>这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：<br>    title: tags<br>    date: 2017-06-01 22:12:02<br>    type: “tags”<br>注意：如果有启用多说或者Disqus评论，默认页面也会带有评论。需要关闭的话，请添加字段comments，并将值设置为false，如：<br>    comments: false<br>显示空白页是由于没有引用主题里写好的layout文件<br>    layout: “tags”</p>
+<h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>首先要创建博客文件<br><img src="http://i.imgur.com/qkPWIKn.png" alt=""><br>使用Markdownpad打开并编辑，保存<br>文章写好后执行下面命令即可发布文章<br>    hexo d -g</p>
 
       
     </div>
@@ -420,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -474,6 +486,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Next创建标签页"><span class="nav-number">1.</span> <span class="nav-text">Next创建标签页</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建博客"><span class="nav-number">2.</span> <span class="nav-text">创建博客</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
