@@ -1192,9 +1192,19 @@
           
             <h1 id="Next创建标签页"><a href="#Next创建标签页" class="headerlink" title="Next创建标签页"></a>Next创建标签页</h1><pre><code>cd your-hexo-site
 hexo new page &quot;tags&quot;
-</code></pre><p>这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：<br>    title: tags<br>    date: 2017-06-01 22:12:02<br>    type: “tags”<br>注意：如果有启用多说或者Disqus评论，默认页面也会带有评论。需要关闭的话，请添加字段comments，并将值设置为false，如：<br>    comments: false<br>显示空白页是由于没有引用主题里写好的layout文件<br>    layout: “tags”</p>
-<h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>首先要创建博客文件<br><img src="http://i.imgur.com/qkPWIKn.png" alt=""><br>使用Markdownpad打开并编辑，保存<br>文章写好后执行下面命令即可发布文章<br>    hexo d -g</p>
-
+</code></pre><p>这时会在sources/tags里面有个index.md的文件，打开这个文件编辑，设置type为tags：</p>
+<pre><code>title: tags
+date: 2017-06-01 22:12:02
+type: &quot;tags&quot;
+</code></pre><p>注意：如果有启用多说或者Disqus评论，默认页面也会带有评论。需要关闭的话，请添加字段comments，并将值设置为false，如：</p>
+<pre><code>comments: false
+</code></pre><p>显示空白页是由于没有引用主题里写好的layout文件</p>
+<pre><code>layout: &quot;tags&quot;
+</code></pre><p>最终形式：</p>
+<p><img src="http://i.imgur.com/MpChBJh.png" alt=""></p>
+<h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>首先要创建博客文件<br><img src="http://i.imgur.com/qkPWIKn.png" alt=""><br>使用Markdownpad打开并编辑，保存<br>文章写好后执行下面命令即可发布文章</p>
+<pre><code>hexo d -g
+</code></pre>
           
         
       
