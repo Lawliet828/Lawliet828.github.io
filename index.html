@@ -324,7 +324,7 @@
       
         
           
-            <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少<stdio.h>，<stdlib.h>，<math.h>头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</math.h></stdlib.h></stdio.h></p>
+            <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少<stdio.h>、<stdlib.h>、<math.h>头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</math.h></stdlib.h></stdio.h></p>
 <ol>
 <li>打开项目空间，依次选择项目–&gt;xxx属性（你的项目名字属性）<br><img src="http://i.imgur.com/3886qAA.png" alt=""></li>
 <li>在打开的选项卡中选择vc++目录–&gt;包含目录下拉条点击编辑<br><img src="http://i.imgur.com/9Une0Vi.png" alt=""></li>
