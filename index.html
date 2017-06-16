@@ -324,13 +324,13 @@
       
         
           
-            <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少<stdio.h>,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</stdio.h></p>
+            <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少stdio.h,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</p>
 <ol>
 <li>打开项目空间，依次选择项目–&gt;xxx属性（你的项目名字属性）<br><img src="http://i.imgur.com/3886qAA.png" alt=""></li>
 <li>在打开的选项卡中选择vc++目录–&gt;包含目录下拉条点击编辑<br><img src="http://i.imgur.com/9Une0Vi.png" alt=""></li>
-<li>点击最上方的添加一个新地址，如图所示<br><img src="http://i.imgur.com/vcfSKPw.png" alt=""><br>这里的地址默认是：C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\ucrt</li>
+<li>点击最上方的添加一个新地址，如图所示<br><img src="http://i.imgur.com/vcfSKPw.png" alt=""><br>这里的地址默认是：<br>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\ucrt</li>
 </ol>
-<p>然而在编译时又出现了无法打开ucrtd.lib的问题，继续打开属性标签页，编辑库目录<br><img src="http://i.imgur.com/oWDcH6F.png" alt=""><br>与上述方法一样，添加库目录地址 默认为：C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\ucrt\x86，如果默认地址没有我们需要的文件，全局搜索文件名然后找到对应的文件夹路径，添加上就好啦。</p>
+<p>然而在编译时又出现了无法打开ucrtd.lib的问题，继续打开属性标签页，编辑库目录<br><img src="http://i.imgur.com/oWDcH6F.png" alt=""><br>与上述方法一样，添加库目录地址默认为：C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\ucrt\x86，如果默认地址没有我们需要的文件，全局搜索文件名然后找到对应的文件夹路径，添加上就好啦。</p>
 <h1 id="error-C4996-‘fopen’问题"><a href="#error-C4996-‘fopen’问题" class="headerlink" title="error C4996: ‘fopen’问题"></a>error C4996: ‘fopen’问题</h1><p>编译程序时出现如下错误<br>error C4996: ‘fopen’: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.<br>解决方法：</p>
 <ol>
 <li>在工程文件处右击，选择properties<br><img src="http://i.imgur.com/Y0kkcod.png" alt=""></li>
