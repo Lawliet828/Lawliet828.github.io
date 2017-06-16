@@ -87,13 +87,13 @@
 
 
 
-<meta name="description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少、、头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows">
+<meta name="description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="program学习日记1">
 <meta property="og:url" content="http://yoursite.com/2017/06/16/program学习日记1/index.html">
 <meta property="og:site_name" content="妖刀kylin">
-<meta property="og:description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少、、头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows">
+<meta property="og:description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files">
 <meta property="og:image" content="http://i.imgur.com/3886qAA.png">
 <meta property="og:image" content="http://i.imgur.com/9Une0Vi.png">
 <meta property="og:image" content="http://i.imgur.com/vcfSKPw.png">
@@ -101,10 +101,10 @@
 <meta property="og:image" content="http://i.imgur.com/Y0kkcod.png">
 <meta property="og:image" content="http://i.imgur.com/SMRMGSW.png">
 <meta property="og:image" content="http://i.imgur.com/Z5rbqeQ.png">
-<meta property="og:updated_time" content="2017-06-16T08:53:59.411Z">
+<meta property="og:updated_time" content="2017-06-16T08:57:39.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program学习日记1">
-<meta name="twitter:description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少、、头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows">
+<meta name="twitter:description" content="缺少等头文件今天使用VS2015编译C程序时，一直提示缺少,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files">
 <meta name="twitter:image" content="http://i.imgur.com/3886qAA.png">
 
 
@@ -330,7 +330,7 @@
       
 
       
-        <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少<stdio.h>、<stdlib.h>、<math.h>头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</math.h></stdlib.h></stdio.h></p>
+        <h1 id="缺少等头文件"><a href="#缺少等头文件" class="headerlink" title="缺少等头文件"></a>缺少<stdio.h>等头文件</stdio.h></h1><p>今天使用VS2015编译C程序时，一直提示缺少<stdio.h>,stdlib.h,math.h头文件。VS工程默认的包含路径C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include下的确没有这些头文件，那么应该怎么办呢，难道需要手动从别处拷贝缺少的文件吗？后来搜索了一下发现，微软悄悄将这几个头文件挪到了C:\Program Files (x86)\Windows Kits\10\Include\中了。<br>解决方法：</stdio.h></p>
 <ol>
 <li>打开项目空间，依次选择项目–&gt;xxx属性（你的项目名字属性）<br><img src="http://i.imgur.com/3886qAA.png" alt=""></li>
 <li>在打开的选项卡中选择vc++目录–&gt;包含目录下拉条点击编辑<br><img src="http://i.imgur.com/9Une0Vi.png" alt=""></li>
