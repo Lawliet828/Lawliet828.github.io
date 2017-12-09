@@ -247,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/Visual-Studio改变配色方案/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/Visual_Studio学习日志/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jie">
@@ -269,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/05/Visual-Studio改变配色方案/" itemprop="url">
-                  Visual Studio改变配色方案
+                <a class="post-title-link" href="/2017/12/05/Visual_Studio学习日志/" itemprop="url">
+                  Visual Studio学习日志
                 </a>
               
             
@@ -326,6 +326,10 @@
           
             <h1 id="颜色主题"><a href="#颜色主题" class="headerlink" title="颜色主题"></a>颜色主题</h1><p>打开【工具]&gt;【选项】，在【环境】&gt;【常规】中【颜色主题】可改为深色。<br><img src="https://i.imgur.com/QplQRlu.png" alt=""></p>
 <h1 id="Color-Scheme"><a href="#Color-Scheme" class="headerlink" title="Color Scheme"></a>Color Scheme</h1><p>Studio Styles提供了很多Color Scheme<br><a href="https://studiostyl.es/" target="_blank" rel="external">https://studiostyl.es/</a><br>选择喜欢的Color Scheme，选择对应的版本下载。<br>打开【工具】&gt;【导入和导出设置】，选择【导入选定的环境设置】<br><img src="https://i.imgur.com/5Uc22ZF.png" alt=""><br>视需要备份当前设置；<br>选择【浏览】打开下载的Color Scheme。</p>
+<h1 id="自动排版"><a href="#自动排版" class="headerlink" title="自动排版"></a>自动排版</h1><p>ctrl+a 全选<br>编辑.格式化选定内容 ctrl+k，ctrl+f 根据周围的代码行，正确缩进选定的代码行。</p>
+<h1 id="注释与去掉注释"><a href="#注释与去掉注释" class="headerlink" title="注释与去掉注释"></a>注释与去掉注释</h1><p>编辑.注释选定内容 ctrl+k，ctrl+c 使用编程语言的正确注释语法将代码的当前行标记为注释。<br>编辑.取消注释选定内容 ctrl+k，ctrl+u 从代码的当前行中移除注释语法。</p>
+<h1 id="显示解决方案资源管理器"><a href="#显示解决方案资源管理器" class="headerlink" title="显示解决方案资源管理器"></a>显示解决方案资源管理器</h1><p>视图.解决方案资源管理器 ctrl+alt+l 显示解决方案资源管理器。</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>撤消 ctrl+z<br>重复 ctrl+y<br>转换为大写 ctrl+shift+u<br>转换为小写 ctrl+u<br>开始执行（不调试）ctrl+f5<br>快速隐藏或显示当前代码段 ctrl+m+m （按两次m）</p>
 
           
         
@@ -457,6 +461,8 @@
 <li>输入!，并按Esc键，完成注释。</li>
 </ol>
 <h1 id="修改配色方案"><a href="#修改配色方案" class="headerlink" title="修改配色方案"></a>修改配色方案</h1><p>找到GVim的安装目录下的_vimrc文件,使用文本编辑器打开后在里面添加两行代码即可<br>    <code>set gfn=Courier_New:h12</code><br>    <code>colorscheme desert</code><br>对于字体的设置命令为set gfn=字体名称:h字号<br>注意：字体名称如果为连续的就直接输入。但是中间有空格的话，就必须如上图所示将空格变为”_”将其连接<br>对于背景颜色的设置命令为colorscheme 颜色方案名称。<br>注意：颜色方案名称的来源你可以打开gVim里面“编辑”菜单里面的配色方案，选其中的一种即可。</p>
+<h1 id="比较两个文档"><a href="#比较两个文档" class="headerlink" title="比较两个文档"></a>比较两个文档</h1><p>windows下选中两个文件<br>鼠标右键-&gt;Diff with Vim</p>
+<p>在窗口间跳转：<br>ctrl-w w   跳到下一个窗口<br>ctrl-w h   跳到左侧窗口<br>ctrl-w l   跳到右侧窗口<br>ctrl-w j   跳到下方的窗口<br>ctrl-w k   跳到上方的窗口<br>折叠相同的文本行<br>zo   打开折叠区<br>zc   关闭折叠区</p>
 
           
         
