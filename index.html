@@ -600,7 +600,7 @@
       
         
           
-            <h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是<ctrl-v>，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：<ctrl-q>，此时会显示：可视－块。</ctrl-q></ctrl-v></p>
+            <h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：Ctrl+q，此时会显示：可视－块。</p>
 <p>如果希望批量插入fortran注释，则为以下操作顺序：</p>
 <ol>
 <li>移动光标到注释块的第一行。</li>
@@ -611,6 +611,7 @@
 <li>输入!，并按Esc键，完成注释。</li>
 </ol>
 <h1 id="修改配色方案"><a href="#修改配色方案" class="headerlink" title="修改配色方案"></a>修改配色方案</h1><p>找到GVim的安装目录下的_vimrc文件,使用文本编辑器打开后在里面添加两行代码即可<br>    <code>set gfn=Courier_New:h12</code><br>    <code>colorscheme desert</code><br>对于字体的设置命令为set gfn=字体名称:h字号<br>注意：字体名称如果为连续的就直接输入。但是中间有空格的话，就必须如上图所示将空格变为”_”将其连接<br>对于背景颜色的设置命令为colorscheme 颜色方案名称。<br>注意：颜色方案名称的来源你可以打开gVim里面“编辑”菜单里面的配色方案，选其中的一种即可。</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>set nu!<br>显示行数<br>set writebackup<br>set nobackup<br>正常关闭前 建立备份文件<br>正常关闭后 自动删除建立的备份文件<br>set noundofile<br>set noswapfile<br>禁止生成undofile</p>
 <h1 id="比较两个文档"><a href="#比较两个文档" class="headerlink" title="比较两个文档"></a>比较两个文档</h1><p>windows下选中两个文件<br>鼠标右键-&gt;Diff with Vim</p>
 <p>在窗口间跳转：<br>ctrl-w w   跳到下一个窗口<br>ctrl-w h   跳到左侧窗口<br>ctrl-w l   跳到右侧窗口<br>ctrl-w j   跳到下方的窗口<br>ctrl-w k   跳到上方的窗口<br>折叠相同的文本行<br>zo   打开折叠区<br>zc   关闭折叠区</p>
 
