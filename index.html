@@ -600,7 +600,11 @@
       
         
           
-            <h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：Ctrl+q，此时会显示：可视－块。</p>
+            <h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p><code>i</code> - 从光标前开始插入字符<br><code>I</code> - 从行首开始插入字符<br><code>a</code> - 从光标后开始插入字符<br><code>A</code> - 从行尾开始插入字符<br><code>o</code> - 在当前行之下另起一行, 开始插入字符<br><code>O</code> - 在当前行之上另起一行, 开始插入字符<br><code>ea</code> - 从当前单词末尾开始插入<br><code>Esc</code> - 退出插入模式</p>
+<h1 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h1><p><code>v</code> 进入可视模式<br>h,j,k,l 移动光标选择内容<br><code>y</code> 复制内容<br><code>p</code> 粘贴内容<br>操作流程：v-&gt;y-&gt;p<br>其它操作：<br><code>yy</code> 选择整行<br><code>dd</code> 删除整行</p>
+<p><code>&gt;</code> - 向右缩进<br><code>&lt;</code> - 向左缩进<br><code>y</code> - 复制<br><code>d</code> - 剪切<br><code>~</code> - 大小写切换</p>
+<h1 id="保存和退出"><a href="#保存和退出" class="headerlink" title="保存和退出"></a>保存和退出</h1><p><code>:w</code> 保存不退出<br><code>:q</code> 退出文件<br><code>:wq</code> 保存并退出<br><code>:q!</code> 不保存并退出<br><code>:x</code> 退出，如果文件更改则保存<br><code>shift+Z+Z</code> 退出，如果文件更改则保存</p>
+<h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：Ctrl+q，此时会显示：可视－块。</p>
 <p>如果希望批量插入fortran注释，则为以下操作顺序：</p>
 <ol>
 <li>移动光标到注释块的第一行。</li>

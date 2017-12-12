@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="批量注释整段代码在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。一般的选择模式为：v（小写），此时会显示：可视。行选择模式为：V（大写），此时会显示：可视－行。块选择模式则为：Ctrl+q，此时会显示：可视－块。 如果希望批量插入fortran注释，则为以下操作顺序：  移动光标到注释块的第一行。 按Esc进入Normal模式。 按进入块选择模式。 用h、j、k、">
+<meta name="description" content="插入模式i - 从光标前开始插入字符I - 从行首开始插入字符a - 从光标后开始插入字符A - 从行尾开始插入字符o - 在当前行之下另起一行, 开始插入字符O - 在当前行之上另起一行, 开始插入字符ea - 从当前单词末尾开始插入Esc - 退出插入模式 可视模式v 进入可视模式h,j,k,l 移动光标选择内容y 复制内容p 粘贴内容操作流程：v-&amp;gt;y-&amp;gt;p其它操作：yy 选择整">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编辑器之神">
 <meta property="og:url" content="http://yoursite.com/2017/11/25/编辑器之神/index.html">
 <meta property="og:site_name" content="妖刀kylin">
-<meta property="og:description" content="批量注释整段代码在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。一般的选择模式为：v（小写），此时会显示：可视。行选择模式为：V（大写），此时会显示：可视－行。块选择模式则为：Ctrl+q，此时会显示：可视－块。 如果希望批量插入fortran注释，则为以下操作顺序：  移动光标到注释块的第一行。 按Esc进入Normal模式。 按进入块选择模式。 用h、j、k、">
-<meta property="og:updated_time" content="2017-12-12T04:01:04.801Z">
+<meta property="og:description" content="插入模式i - 从光标前开始插入字符I - 从行首开始插入字符a - 从光标后开始插入字符A - 从行尾开始插入字符o - 在当前行之下另起一行, 开始插入字符O - 在当前行之上另起一行, 开始插入字符ea - 从当前单词末尾开始插入Esc - 退出插入模式 可视模式v 进入可视模式h,j,k,l 移动光标选择内容y 复制内容p 粘贴内容操作流程：v-&amp;gt;y-&amp;gt;p其它操作：yy 选择整">
+<meta property="og:updated_time" content="2017-12-12T09:57:26.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编辑器之神">
-<meta name="twitter:description" content="批量注释整段代码在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。一般的选择模式为：v（小写），此时会显示：可视。行选择模式为：V（大写），此时会显示：可视－行。块选择模式则为：Ctrl+q，此时会显示：可视－块。 如果希望批量插入fortran注释，则为以下操作顺序：  移动光标到注释块的第一行。 按Esc进入Normal模式。 按进入块选择模式。 用h、j、k、">
+<meta name="twitter:description" content="插入模式i - 从光标前开始插入字符I - 从行首开始插入字符a - 从光标后开始插入字符A - 从行尾开始插入字符o - 在当前行之下另起一行, 开始插入字符O - 在当前行之上另起一行, 开始插入字符ea - 从当前单词末尾开始插入Esc - 退出插入模式 可视模式v 进入可视模式h,j,k,l 移动光标选择内容y 复制内容p 粘贴内容操作流程：v-&amp;gt;y-&amp;gt;p其它操作：yy 选择整">
 
 
 
@@ -322,7 +322,11 @@
       
 
       
-        <h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：Ctrl+q，此时会显示：可视－块。</p>
+        <h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p><code>i</code> - 从光标前开始插入字符<br><code>I</code> - 从行首开始插入字符<br><code>a</code> - 从光标后开始插入字符<br><code>A</code> - 从行尾开始插入字符<br><code>o</code> - 在当前行之下另起一行, 开始插入字符<br><code>O</code> - 在当前行之上另起一行, 开始插入字符<br><code>ea</code> - 从当前单词末尾开始插入<br><code>Esc</code> - 退出插入模式</p>
+<h1 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h1><p><code>v</code> 进入可视模式<br>h,j,k,l 移动光标选择内容<br><code>y</code> 复制内容<br><code>p</code> 粘贴内容<br>操作流程：v-&gt;y-&gt;p<br>其它操作：<br><code>yy</code> 选择整行<br><code>dd</code> 删除整行</p>
+<p><code>&gt;</code> - 向右缩进<br><code>&lt;</code> - 向左缩进<br><code>y</code> - 复制<br><code>d</code> - 剪切<br><code>~</code> - 大小写切换</p>
+<h1 id="保存和退出"><a href="#保存和退出" class="headerlink" title="保存和退出"></a>保存和退出</h1><p><code>:w</code> 保存不退出<br><code>:q</code> 退出文件<br><code>:wq</code> 保存并退出<br><code>:q!</code> 不保存并退出<br><code>:x</code> 退出，如果文件更改则保存<br><code>shift+Z+Z</code> 退出，如果文件更改则保存</p>
+<h1 id="批量注释整段代码"><a href="#批量注释整段代码" class="headerlink" title="批量注释整段代码"></a>批量注释整段代码</h1><p>在gvim（windows版）中，块选择的快捷键不是Ctrl+v，此快捷键为粘贴。<br>一般的选择模式为：v（小写），此时会显示：可视。<br>行选择模式为：V（大写），此时会显示：可视－行。<br>块选择模式则为：Ctrl+q，此时会显示：可视－块。</p>
 <p>如果希望批量插入fortran注释，则为以下操作顺序：</p>
 <ol>
 <li>移动光标到注释块的第一行。</li>
@@ -523,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#批量注释整段代码"><span class="nav-number">1.</span> <span class="nav-text">批量注释整段代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改配色方案"><span class="nav-number">2.</span> <span class="nav-text">修改配色方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">3.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较两个文档"><span class="nav-number">4.</span> <span class="nav-text">比较两个文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入模式"><span class="nav-number">1.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视模式"><span class="nav-number">2.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保存和退出"><span class="nav-number">3.</span> <span class="nav-text">保存和退出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量注释整段代码"><span class="nav-number">4.</span> <span class="nav-text">批量注释整段代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改配色方案"><span class="nav-number">5.</span> <span class="nav-text">修改配色方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">6.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较两个文档"><span class="nav-number">7.</span> <span class="nav-text">比较两个文档</span></a></li></ol></div>
             
 
           </div>
