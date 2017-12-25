@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/25/编辑器之神/index.html">
 <meta property="og:site_name" content="妖刀kylin">
 <meta property="og:description" content="插入模式i - 从光标前开始插入字符I - 从行首开始插入字符a - 从光标后开始插入字符A - 从行尾开始插入字符o - 在当前行之下另起一行, 开始插入字符O - 在当前行之上另起一行, 开始插入字符ea - 从当前单词末尾开始插入Esc - 退出插入模式 可视模式v 进入可视模式h,j,k,l 移动光标选择内容y 复制内容p 粘贴内容操作流程：v-&amp;gt;y-&amp;gt;p其它操作：yy 选择整">
-<meta property="og:updated_time" content="2017-12-22T08:01:57.613Z">
+<meta property="og:updated_time" content="2017-12-25T03:07:01.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编辑器之神">
 <meta name="twitter:description" content="插入模式i - 从光标前开始插入字符I - 从行首开始插入字符a - 从光标后开始插入字符A - 从行尾开始插入字符o - 在当前行之下另起一行, 开始插入字符O - 在当前行之上另起一行, 开始插入字符ea - 从当前单词末尾开始插入Esc - 退出插入模式 可视模式v 进入可视模式h,j,k,l 移动光标选择内容y 复制内容p 粘贴内容操作流程：v-&amp;gt;y-&amp;gt;p其它操作：yy 选择整">
@@ -341,7 +341,18 @@
 <h1 id="比较两个文档"><a href="#比较两个文档" class="headerlink" title="比较两个文档"></a>比较两个文档</h1><p>windows下选中两个文件<br>鼠标右键-&gt;Diff with Vim</p>
 <p>在窗口间跳转：<br>ctrl-w w   跳到下一个窗口<br>ctrl-w h   跳到左侧窗口<br>ctrl-w l   跳到右侧窗口<br>ctrl-w j   跳到下方的窗口<br>ctrl-w k   跳到上方的窗口<br>折叠相同的文本行<br>zo   打开折叠区<br>zc   关闭折叠区</p>
 <h1 id="乱码的解决办法"><a href="#乱码的解决办法" class="headerlink" title="乱码的解决办法"></a>乱码的解决办法</h1><pre><code>set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-</code></pre>
+</code></pre><h1 id="更改键盘键位映射-Caps与Ctrl互换"><a href="#更改键盘键位映射-Caps与Ctrl互换" class="headerlink" title="更改键盘键位映射(Caps与Ctrl互换)"></a>更改键盘键位映射(Caps与Ctrl互换)</h1><p>为了正确设置，我们有必要先了解一下“Scancode Map”(扫描码映射)。</p>
+<p>“Scancode Map”是注册表中[HKEY_LOCAL_MacHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]中的一个二进制键值(默认没有，需新建)，并且有固定的格式。</p>
+<p>Scancode Map 代码的一般格式是：“hex:00,00,00,00,00,00,00,00,|02|,00,00,00,|映射之后的扫描码（XX XX）,原扫描码(XX XX)|00,00,00,00”。</p>
+<p>其含义为：前8个00是版本号和头部字节，接下来的“02”表示映射数，其最小为值为“02”，表示只映射一组（这里的数值是映射数目加上末尾用作结尾的“00，00，00，00”，因此总是比实际的映射数目大一），若要映射多组，只需增加相应的值即可，如映射2组其值应为“03”,3组为“04”。</p>
+<p>后边代码每4个是一组：前两个是映射后键位的扫描码，后两个是键位原扫描码。</p>
+<p>如果要交换两个键，则一个有两组映射，四个值的排列形式是：键A，键B，键B，键A——它表示：键A成为键B，键B成为键A。最后以“00,00,00,00” 结尾。了解了“Scancode Map”之后，我们就可以来利用添加功能键了。</p>
+<p>重启你的电脑后，你的改变就生效了。<br>也可以用将下面的文本存成“scancode.reg”，双击导入注册表。键值可通过查上面提到的键位表查询，找到你要替换的 Scan Code码，把##,##替换掉就可以了。<br>    Windows Registry Editor Version 5.00<br>    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>    “Scancode Map”=hex:00,00,00,00,00,00,00,00,02,00,00,00,##,##,##,##,00,00,00,00<br>    7、举例：比如说我们想把F9，F10键修改成为音量调整键，通过查表，可以得知：F9、F10扫描码分别为(00，43)、(00,44),Volume Up、Volume Down的扫描码分别为(E0，30)、(E0,2E)，这样只要将Scancode设置为如下就可以了：<br>    “Scancode Map”=hex:00,00,00,00,00,00,00,00,03,00,00,00,30,E0,43,00,2E,E0,44,00,00,00,00,00<br>含义为： | 版本号和头部字节 | 两组映射 | 第一组 | 第二组 | 结尾终止 | </p>
+<p>另外，如果想要某个键失效，将它的扫描码映射为“00 00”即可。</p>
+<p>上述对注册表的修改，必须在重新启动电脑后，才能生效。<br>若要恢复键盘键位原来的布局，只需定位于注册表[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]，删除”Scancode Map”键值，然后重启电脑即可。<br>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；另外，如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</p>
+<p>部分键盘扫描码如下<br>Caps Lock | 00 3A<br>Right Ctrl | E0 1D<br>Left Ctrl | 00 1D<br>Menu |  E0 5D<br>Win | E0 5C</p>
+<p>Caps与Ctrl互换<br>    0000 00 00 00 00 00 00 00 00<br>    0008 03 00 00 00 1D 00 3A 00<br>    0010 3A 00 1D 00 00 00 00 00<br>    0018</p>
+
       
     </div>
 
@@ -528,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入模式"><span class="nav-number">1.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视模式"><span class="nav-number">2.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保存和退出"><span class="nav-number">3.</span> <span class="nav-text">保存和退出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量注释整段代码"><span class="nav-number">4.</span> <span class="nav-text">批量注释整段代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改配色方案"><span class="nav-number">5.</span> <span class="nav-text">修改配色方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">6.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较两个文档"><span class="nav-number">7.</span> <span class="nav-text">比较两个文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乱码的解决办法"><span class="nav-number">8.</span> <span class="nav-text">乱码的解决办法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入模式"><span class="nav-number">1.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视模式"><span class="nav-number">2.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保存和退出"><span class="nav-number">3.</span> <span class="nav-text">保存和退出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量注释整段代码"><span class="nav-number">4.</span> <span class="nav-text">批量注释整段代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改配色方案"><span class="nav-number">5.</span> <span class="nav-text">修改配色方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">6.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较两个文档"><span class="nav-number">7.</span> <span class="nav-text">比较两个文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乱码的解决办法"><span class="nav-number">8.</span> <span class="nav-text">乱码的解决办法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改键盘键位映射-Caps与Ctrl互换"><span class="nav-number">9.</span> <span class="nav-text">更改键盘键位映射(Caps与Ctrl互换)</span></a></li></ol></div>
             
 
           </div>
