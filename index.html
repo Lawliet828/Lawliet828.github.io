@@ -749,7 +749,37 @@
 <p>重启你的电脑后，你的改变就生效了。<br>也可以用将下面的文本存成“scancode.reg”，双击导入注册表。键值可通过查上面提到的键位表查询，找到你要替换的 Scan Code码，把##,##替换掉就可以了。<br>    Windows Registry Editor Version 5.00<br>    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>    “Scancode Map”=hex:00,00,00,00,00,00,00,00,02,00,00,00,##,##,##,##,00,00,00,00<br>    7、举例：比如说我们想把F9，F10键修改成为音量调整键，通过查表，可以得知：F9、F10扫描码分别为(00，43)、(00,44),Volume Up、Volume Down的扫描码分别为(E0，30)、(E0,2E)，这样只要将Scancode设置为如下就可以了：<br>    “Scancode Map”=hex:00,00,00,00,00,00,00,00,03,00,00,00,30,E0,43,00,2E,E0,44,00,00,00,00,00<br>含义为： | 版本号和头部字节 | 两组映射 | 第一组 | 第二组 | 结尾终止 | </p>
 <p>另外，如果想要某个键失效，将它的扫描码映射为“00 00”即可。</p>
 <p>上述对注册表的修改，必须在重新启动电脑后，才能生效。<br>若要恢复键盘键位原来的布局，只需定位于注册表[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]，删除”Scancode Map”键值，然后重启电脑即可。<br>在目前的Windows版本下面，对键盘映射是全局的，而不是针对某个用户的，如果您修改添加或者删除了某个映射，那么不管哪个用户使用，键盘都发生了变化；另外，如果一台电脑有多个键盘，那这些键盘都会产生同样的变化。</p>
-<p>部分键盘扫描码如下<br>key | scan code<br>:-: | :-:<br>Caps Lock | 00 3A<br>Right Ctrl | E0 1D<br>Left Ctrl | 00 1D<br>Menu | E0 5D<br>Win | E0 5C</p>
+<p>部分键盘扫描码如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">key</th>
+<th style="text-align:center">scan code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">  Caps Lock</td>
+<td style="text-align:center">00 3A</td>
+</tr>
+<tr>
+<td style="text-align:center">  Right Ctrl</td>
+<td style="text-align:center">E0 1D</td>
+</tr>
+<tr>
+<td style="text-align:center">  Left Ctrl</td>
+<td style="text-align:center">00 1D</td>
+</tr>
+<tr>
+<td style="text-align:center">  Menu</td>
+<td style="text-align:center">E0 5D</td>
+</tr>
+<tr>
+<td style="text-align:center">  Win</td>
+<td style="text-align:center">E0 5C</td>
+</tr>
+</tbody>
+</table>
 <p>Caps与Ctrl互换<br>    <code>0000 00 00 00 00 00 00 00 00</code><br>    <code>0008 03 00 00 00 1D 00 3A 00</code><br>    <code>0010 3A 00 1D 00 00 00 00 00</code><br>    <code>0018</code></p>
 
           
